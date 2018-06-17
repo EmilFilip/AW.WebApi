@@ -18,7 +18,7 @@ namespace AW.WebApi.Helpers
 
             actionContext.Request.Headers.TryGetValues(Constants.customHeaderKey, out header);
 
-            if (header == null || header.First() != Constants.customHeaderValue)
+            if (header == null || Base64Helper.Base64Decode(header.First()) != Constants.customHeaderValue)
             {
                 throw new HttpResponseException(ApiHttpResponseException.Get(HttpStatusCode.Unauthorized, Constants.customHeaderExceptionMessage));
             }

@@ -18,7 +18,7 @@ namespace AW.WepApi.DAL.RepositoryService.Products
                 {
                     return base.Insert<DimProduct>(new DimProduct()
                     {
-                        ProductKey = product.Key,
+                        //ProductKey = product.Key,
                         ProductSubcategoryKey = product.ProductSubcategoryKey,
                         ProductAlternateKey = product.AlternateKey,
                         EnglishProductName = product.Name,
