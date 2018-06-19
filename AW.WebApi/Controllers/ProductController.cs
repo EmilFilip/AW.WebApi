@@ -41,12 +41,14 @@ namespace AW.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Route("api/DeleteProduct/{productId}")]
         public async Task<bool> DeleteProduct(int productId)
         {
             return await _iProductsService.DeleteProduct(productId);
         }
 
         [HttpGet]
+        [Route("api/GetProductsByProductSubCategory/{productId}")]
         public async Task<IEnumerable<ProductDto>> GetProductsByProductSubCategory(int productId)
         {
             return await _iProductsService.GetProductsByProductSubCategory(productId);

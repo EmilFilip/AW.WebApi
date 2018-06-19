@@ -28,6 +28,7 @@ namespace AW.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("api/CategorySubcategories/{productCategoryId}")]
         public async Task<IEnumerable<ProductSubcategoryDto>> GetProductSubcategoriesByProductCategoryId(int productCategoryId)
         {
             return await _iProductSubcategoryService.GetProductSubcategoriesByProductCategoryId(productCategoryId);
