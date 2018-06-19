@@ -1,5 +1,6 @@
 ﻿using AW.WebApi.Helpers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AW.WebApi
 {
@@ -7,6 +8,8 @@ namespace AW.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             config.Filters.Add(new CustomAuthorizeAttribute());
 
             // Web API routes
